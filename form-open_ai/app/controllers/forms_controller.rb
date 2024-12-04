@@ -17,8 +17,8 @@ class FormsController < ApplicationController
     @form = Form.new(form_params)
     puts "esto es description #{@form[:description]}"
     puts "Esto es form #{@form.inspect}"
-    openaiService = OpenapiService.new(@form[:description])
-    openaiService.askChat
+    #openaiService = OpenapiService.new(@form[:description])
+    #openaiService.askChat
   end
   
 
