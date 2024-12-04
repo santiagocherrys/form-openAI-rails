@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   get '/forms/index' => 'forms#index'
+  get '/forms/new' => 'forms#new'
+  post '/forms' => 'forms#create', as: 'forms'
+
 end
