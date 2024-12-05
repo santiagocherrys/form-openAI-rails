@@ -10,6 +10,8 @@ class FormsController < ApplicationController
 
   def index
     @forms = Form.all
+    puts "AQUI VA SIDEKIQ AAAAAAYYYYYYYYYYYYYYYYYYY"
+    HelloJob.perform_in(1.minutes,'Jeff')
   end
 
   def create
