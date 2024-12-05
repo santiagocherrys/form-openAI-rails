@@ -44,6 +44,7 @@ class OpenapiService
         
       else
         { success: false, error: response_body['error'] || 'Error desconocido' }
+        return message["message"]["content"]
       end
     rescue StandardError => e
       if (retries += 1) <= 3
