@@ -11,14 +11,14 @@
 
   <p>
     <strong>Procesamiento de la tarea</strong>
-    <%= form.processed_in_job %>
+    <%= form.processed_in_job ? "Hilo principal" : "Job encolado" %>
   </p>
 
 
   <% if form.response.present? %>
-  <p>
-  <strong>La respuesta es</strong>
-<% end %>
+    <p>
+    <strong>La respuesta es</strong>
+  <% end %>
   
   <% 
 
@@ -57,6 +57,15 @@
   
   <%= new_string %>  <!-- Output the ai_response variable -->
   
+   <% if params[:id] != nil  && form.response.present? %>
+    <p>
+    <strong>El status es: </strong>
+    <%= respuesta["status"]%>
+    <p>
+      <strong>Created at: </strong>
+      <%= respuesta["created_at"]%>
+    </p>
+  <% end %>
 
   </p>
 
