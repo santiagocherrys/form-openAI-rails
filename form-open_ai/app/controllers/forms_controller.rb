@@ -10,6 +10,7 @@ class FormsController < ApplicationController
 
   def index
     @forms = Form.all
+    QuequeChatJob.perform_async('Adriana')
   end
 
   def create
