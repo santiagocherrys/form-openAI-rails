@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   
-  get '/forms/index' => 'forms#index'
-  get '/forms/new' => 'forms#new'
-  post '/forms' => 'forms#create', as: 'forms'
+  #get '/forms/index' => 'forms#index'
+  #get '/forms/new' => 'forms#new'
+  #post '/forms' => 'forms#create', as: 'forms'
+
+  resources :forms
 
 end
