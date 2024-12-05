@@ -20,9 +20,9 @@ class FormsController < ApplicationController
     respond_to do |format|
       if @form.save
         puts "Esto es el id de form generado #{@form.id}"
-        #Hilo principal ->true
-        #Encolado -> false
-        if @form.processed_in_job == true
+        #Encolado -> true
+        #Hilo principal ->false
+        if @form.processed_in_job == false
           puts "Hilo principal"
           openaiService = OpenapiService.new(@form[:description])
           responseChat = openaiService.askChat

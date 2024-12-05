@@ -14,4 +14,50 @@
     <%= form.processed_in_job %>
   </p>
 
+
+  <% if form.response.present? %>
+  <p>
+  <strong>La respuesta es</strong>
+<% end %>
+  
+  <% 
+
+    #this validation is for know if i am in index or in show
+    if params[:id] == nil
+      # Use safe navigation to handle nil responses
+      #& is use in case that the response is nil skip and not generated an error
+      respuesta = form.response&.as_json
+      if respuesta !=nil
+          ai_response = respuesta ? respuesta["ai_response"] : "No response available"
+          if ai_response 
+            #this is for split by spaces and print the first 5 words
+            myArrar = ai_response.split
+
+            new_string = ""
+            for a in 0..5 do
+              if a!= 5
+                new_string += myArrar[a] + " "
+              else
+                new_string += myArrar[a]
+              end
+            end
+            new_string += "..."
+          end
+      end
+    else
+      respuesta = form.response&.as_json
+      if respuesta != nil
+          ai_response = respuesta ? respuesta["ai_response"] : "No response available"
+          new_string = ai_response
+      end
+
+    end
+    
+  %>
+  
+  <%= new_string %>  <!-- Output the ai_response variable -->
+  
+
+  </p>
+
 </div>
