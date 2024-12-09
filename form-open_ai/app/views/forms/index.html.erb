@@ -1,22 +1,25 @@
 <!-- <p style="color: green"><%= notice %></p> -->
 
-<% content_for :title, "Forms" %>
 <div>
   <h1>These are the Forms you are searched</h1>
 
-  <div id="forms" class="mt-4">
+  <div id="forms" class="mt-4 space-y-6 bg-lime-500">
     <% @forms.each do |form| %>
-      <%= render form %>
-      <p class="m-2" >
-        <%= link_to "Show this form", form, class: "flex-1 ml-3 bg-white py-2 px-5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray 50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
-      </p>
+      <div style="background-color: #009999;" class="block max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <%= render form %>
+        
+        <!-- Wrap the button in a container to ensure proper alignment -->
+        <div class="mt-4 flex justify-center">
+          <%= link_to "Show this form", form, class: "bg-gray-400 py-2 px-5 border border-gray-500 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      </div>
     <% end %>
   </div>
 
   <p class="mt-4">
-    <%= link_to "New question(form)", new_form_path, class: "flex-1 ml-3 bg-white py-2 px-5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray 50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    <%= link_to "New question(form)", new_form_path, class: "bg-white py-2 px-5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
   </p>
-  
 </div>
+
 
 
