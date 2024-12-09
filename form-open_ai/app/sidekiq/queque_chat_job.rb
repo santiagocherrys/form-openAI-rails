@@ -14,6 +14,8 @@ class QuequeChatJob
       puts "Respuesta correcta"
       #@response.update(id_response,responseChat, 1)
       @response.update(ai_response: responseChat, status: 1)
+      #testing mail
+      UserMailer.welcome_email("santiagocherrys@hotmail.com", "Ya tienes tu respuesta...", "This is your question: \n #{question} \n please view answer in the application").deliver_now
     else
       #@response.update(id_response,responseChat, 2)
       @response.update(ai_response: responseChat, status: 2)

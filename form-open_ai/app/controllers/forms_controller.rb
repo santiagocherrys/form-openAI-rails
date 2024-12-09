@@ -41,8 +41,6 @@ class FormsController < ApplicationController
           puts "ESTA ES LA RESPUESTA CON ID #{@respuesta.id}"
           QuequeChatJob.perform_in(1.minutes, @respuesta.id, @form[:description])
 
-          #testing mail
-          UserMailer.welcome_email("santiagocherrys@hotmail.com", "Hola Mundo").deliver_now
         end
         format.html { redirect_to @form, notice: "Response was successfully created." }
       else
