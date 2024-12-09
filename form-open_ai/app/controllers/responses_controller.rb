@@ -5,7 +5,12 @@ class ResponsesController < ApplicationController
   end
 
   def create(response, state, id)
-    @response = Response.create(ai_response: response, status: state, form_id: id)
+    Response.create(ai_response: response, status: state, form_id: id)
+  end
+
+  def update(id,response, status)
+    @response = Response.find(id)
+    @response.update(ai_response: response, status: state)
   end
 
 
