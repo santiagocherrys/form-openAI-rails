@@ -2,21 +2,21 @@
 
     <div class="space-y-12">
     <div class="border-gray-900/10 pb-12">
-      <h2 class="text-base/7 font-semibold text-gray-900">Form</h2>
-      <p class="mt-1 text-sm/6 text-gray-600">This form is for ask to OpenAI.</p>
+      <h2 class="text-base/7 font-semibold text-gray-900"><%= t("forms.title") %></h2>
+      <p class="mt-1 text-sm/6 text-gray-600"><%= t("forms.form_description") %></p>
 
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-4">
           
           
 
-        <label for="name" class="block text-sm/6 font-medium text-gray-900">Name</label>
+        <label for="name" class="block text-sm/6 font-medium text-gray-900"><%= t("forms.name") %></label>
         <div class="mt-2">
             <%= form.text_field :name, class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" %>
         </div>
 
         <div class="col-span-full">
-          <label for="description" class="block text-sm/6 font-medium text-gray-900">Description</label>
+          <label for="description" class="block text-sm/6 font-medium text-gray-900"><%= t("forms.description") %></label>
           <div class="mt-2">
             <%= form.text_area :description, class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"%>
           </div>
@@ -30,7 +30,7 @@
         
 
         <div class="sm:col-span-3">
-          <label for="country" class="block text-sm/6 font-medium text-gray-900">Procesamiento</label>
+          <label for="country" class="block text-sm/6 font-medium text-gray-900"><%= t("forms.processing") %></label>
           <div class="mt-2 grid grid-cols-1">
             <%= form.select :processed_in_job, [["Hilo principal", false], ["Encolado", true]] %>
           </div>
