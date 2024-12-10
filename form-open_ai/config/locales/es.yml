@@ -1,0 +1,12 @@
+es:
+  forms:
+    title: "Formulario"
+    name: "Nombre"
+    description: "Descripción"
+    processing: "procesamiento de la tarea"
+    response: "la respuesta es"
+    status_is: "el estado es"
+    created_at: "Creado"
+    form: "Formularios"
+    form_description: "Este formulario es creado para preguntar a OpenAI api"
+    hello: "Estos son los formularios que has buscado"

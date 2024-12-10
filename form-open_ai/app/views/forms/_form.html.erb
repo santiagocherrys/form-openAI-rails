@@ -1,23 +1,23 @@
 <div id="<%= dom_id form %>" class="mt-6">
   <p>
-    <strong>Name:</strong>
+    <strong><%= t("forms.name") %>:</strong>
     <%= form.name %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong><%= t("forms.description") %>:</strong>
     <%= form.description %>
   </p>
 
   <p>
-    <strong>Procesamiento de la tarea</strong>
+    <strong><%= t("forms.processing") %></strong>
     <%= form.processed_in_job ? "Job encolado" : "Hilo principal" %>
   </p>
 
 
   <% if form.response.present? %>
     <p>
-    <strong>La respuesta es</strong>
+    <strong><%= t("forms.response") %></strong>
   <% end %>
   
   <% 
@@ -62,7 +62,7 @@
     <strong>El status es: </strong>
     <%= respuesta["status"]%>
     <p>
-      <strong>Created at: </strong>
+      <strong><%= t("forms.created_at") %> </strong>
       <%= respuesta["created_at"]%>
     </p>
   <% end %>
