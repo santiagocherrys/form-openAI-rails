@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   #get '/forms/index' => 'forms#index'
   #get '/forms/new' => 'forms#new'
   #post '/forms' => 'forms#create', as: 'forms'
-
-  resources :forms
+  scope "(:locale)", locale: /en|es/ do
+    resources :forms
+    root "forms#index"
+  end
 
 end

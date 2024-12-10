@@ -28,4 +28,14 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  forms:
+    title: "Forms"
+    name: "Name"
+    description: "Description"
+    processing: "task processing"
+    response: "The response is"
+    status_is: "The status is"
+    created_at: "Created at"
+    form: "Forms"
+    form_description: "This form is for asking to OpenAI api"
+    hello: "These are the Forms you are searched"

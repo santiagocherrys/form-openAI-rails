@@ -18,6 +18,14 @@
   </head>
 
   <body>
+    <header>
+      <%= form_with url: url_for(locale: nil), method: :get, local: true do |f| %>
+        <%= f.select :locale,
+          [["🇬🇧 English", "en"], ["🇨🇴 Español", "es"]],
+          { selected: I18n.locale },
+          { onchange: "this.form.submit()", class: "bg-gray-100 border rounded p-2" } %>
+      <% end %>
+    </header>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
